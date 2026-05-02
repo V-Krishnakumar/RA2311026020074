@@ -1,9 +1,8 @@
 const axios = require("axios");
-const path = require("path");
 
 async function Log(level, pkg, message) {
-    require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
     const token = process.env.TOKEN;
+
     try {
         const response = await axios.post(
             "http://20.207.122.201/evaluation-service/logs",
